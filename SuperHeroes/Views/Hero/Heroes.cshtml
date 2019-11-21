@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<SuperHeroes.Models.SuperHero>
-
 @{
     ViewBag.Title = "Heroes";
 }
@@ -21,6 +20,9 @@
             @Html.DisplayNameFor(model => model.PrimaryAbility)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.SecondaryAbility)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Catchphrase)
         </th>
         <th></th>
@@ -29,7 +31,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.ActionLink(item.Name, "Details", new { id = item.Id })
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.AlterEgo)
@@ -38,11 +40,13 @@
             @Html.DisplayFor(modelItem => item.PrimaryAbility)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.SecondaryAbility)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Catchphrase)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>

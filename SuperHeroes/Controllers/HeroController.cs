@@ -15,15 +15,15 @@ namespace SuperHeroes.Controllers
             db = new ApplicationDbContext();
         }
         // GET: Hero
-        public ActionResult Index()
+        public ActionResult Heroes()
         {
-            return View();
+            return View(db.SuperHeroes);
         }
 
         // GET: Hero/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            return View(db.SuperHeroes.Find(id));
         }
 
         // GET: Hero/Create
@@ -40,7 +40,7 @@ namespace SuperHeroes.Controllers
             {
                 db.SuperHeroes.Add(hero);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Heroes");
             }
             catch
             {
@@ -65,7 +65,7 @@ namespace SuperHeroes.Controllers
                 db.SuperHeroes.Find(id).PrimaryAbility = hero.PrimaryAbility;
                 db.SuperHeroes.Find(id).Catchphrase = hero.Catchphrase;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Heroes");
             }
             catch
             {
@@ -76,18 +76,18 @@ namespace SuperHeroes.Controllers
         // GET: Hero/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(db.SuperHeroes.Find(id));
         }
 
         // POST: Hero/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, SuperHero hero)
+        public ActionResult Delete(SuperHero hero)
         {
             try
             {
-                db.SuperHeroes.Remove(hero);
+                db.SuperHeroes.Remove(db.SuperHeroes.Find(hero.Id));
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Heroes");
             }
             catch
             {
