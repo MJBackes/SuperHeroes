@@ -26,5 +26,11 @@ namespace SuperHeroes.Controllers
 
             return View();
         }
+        public ActionResult Heroes()
+        {
+            ViewBag.Message = "Superhero index page.";
+
+            return View();
+        }
     }
 }

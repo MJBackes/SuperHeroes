@@ -9,6 +9,11 @@ namespace SuperHeroes.Controllers
 {
     public class HeroController : Controller
     {
+        ApplicationDbContext db;
+        public HeroController()
+        {
+            db = new ApplicationDbContext();
+        }
         // GET: Hero
         public ActionResult Index()
         {
@@ -33,8 +38,8 @@ namespace SuperHeroes.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
-
+                db.SuperHeroes.Add(hero);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
@@ -55,8 +60,11 @@ namespace SuperHeroes.Controllers
         {
             try
             {
-                // TODO: Add update logic here
-
+                db.SuperHeroes.Find(id).Name = hero.Name;
+                db.SuperHeroes.Find(id).AlterEgo = hero.AlterEgo;
+                db.SuperHeroes.Find(id).PrimaryAbility = hero.PrimaryAbility;
+                db.SuperHeroes.Find(id).Catchphrase = hero.Catchphrase;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
@@ -77,8 +85,8 @@ namespace SuperHeroes.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
-
+                db.SuperHeroes.Remove(hero);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch

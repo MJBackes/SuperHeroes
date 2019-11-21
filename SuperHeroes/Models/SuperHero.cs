@@ -13,6 +13,7 @@ namespace SuperHeroes.Models
         public string Name { get; set; }
         public string AlterEgo { get; set; }
         public string PrimaryAbility { get; set; }
+        public string SecondaryAbility { get; set; }
         public string Catchphrase { get; set; }
     }
 }
