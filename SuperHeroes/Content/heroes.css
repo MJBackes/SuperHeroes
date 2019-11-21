@@ -1,0 +1,33 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-image: url("images/Strange.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.detailsBox {
+    background-color: rgb(128, 128, 128);
+}
+
+footer {
+    position: relative;
+    margin-top: 5px;
+    bottom: 0;
+}
+
+a {
+    color: aliceblue;
+}
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.dl-horizontal dt {
+    white-space: normal;
+}
+input,
+select,
+textarea {
+    max-width: 280px;
+}

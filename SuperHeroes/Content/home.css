@@ -1,8 +1,21 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url("images/Wong.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
 }
-
+.detailsBox{
+    background-color:rgb(128, 128, 128);
+}
+footer{
+    position:relative;
+    margin-top: 5px;
+    bottom:0;
+}
+a{
+    color:aliceblue;
+}
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -15,7 +28,6 @@
 .dl-horizontal dt {
     white-space: normal;
 }
-
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,

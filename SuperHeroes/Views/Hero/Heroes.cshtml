@@ -2,13 +2,13 @@
 @{
     ViewBag.Title = "Heroes";
 }
-
+    <link rel="stylesheet" href="~/Content/heroes.css" type="text/css" />
 <h2>Heroes</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table detailsBox">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Name)
