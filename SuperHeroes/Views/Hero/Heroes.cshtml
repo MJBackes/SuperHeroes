@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Heroes";
 }
-    <link rel="stylesheet" href="~/Content/heroes.css" type="text/css" />
+@Styles.Render("~/Content/heroes.css")
 <h2>Heroes</h2>
 
 <p>
@@ -28,28 +28,29 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.ActionLink(item.Name, "Details", new { id = item.Id })
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AlterEgo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PrimaryAbility)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SecondaryAbility)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Catchphrase)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.Name, "Details", new { id = item.Id })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlterEgo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrimaryAbility)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondaryAbility)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Catchphrase)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>

@@ -195,6 +195,9 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\create.css" />
+    <Content Include="Content\delete.css" />
+    <Content Include="Content\edit.css" />
     <Content Include="Content\heroes.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

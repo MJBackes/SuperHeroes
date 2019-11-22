@@ -1,0 +1,9 @@
+﻿body {
+    background-image: url("images/Machine.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+footer{
+    position:relative;
+    bottom:0;
+}

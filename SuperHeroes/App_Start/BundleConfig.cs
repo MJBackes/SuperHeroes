@@ -22,9 +22,13 @@ namespace SuperHeroes
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/home.css"));
+            bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
+                      "~/Content/bootstrap.css"));
+            bundles.Add(new StyleBundle("~/Content/home").Include("~/Content/home.css"));
+            bundles.Add(new StyleBundle("~/Content/edit").Include("~/Content/edit.css"));
+            bundles.Add(new StyleBundle("~/Content/heroes").Include("~/Content/heroes.css"));
+            bundles.Add(new StyleBundle("~/Content/delete").Include("~/Content/delete.css"));
+            bundles.Add(new StyleBundle("~/Content/create").Include("~/Content/create.css"));
         }
     }
 }

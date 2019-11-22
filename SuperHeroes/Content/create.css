@@ -1,0 +1,10 @@
+﻿body {
+    background-image: url("images/Stark.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+footer{
+    position:relative;
+    bottom:0;
+
+}

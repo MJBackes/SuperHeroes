@@ -9,8 +9,7 @@
     background-color:rgb(128, 128, 128);
 }
 footer{
-    position:relative;
-    margin-top: 5px;
+    position:absolute;
     bottom:0;
 }
 a{

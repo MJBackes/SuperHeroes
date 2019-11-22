@@ -51,19 +51,20 @@ namespace SuperHeroes.Controllers
         // GET: Hero/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(db.SuperHeroes.Find(id));
         }
 
         // POST: Hero/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, SuperHero hero)
+        public ActionResult Edit(SuperHero hero)
         {
             try
             {
-                db.SuperHeroes.Find(id).Name = hero.Name;
-                db.SuperHeroes.Find(id).AlterEgo = hero.AlterEgo;
-                db.SuperHeroes.Find(id).PrimaryAbility = hero.PrimaryAbility;
-                db.SuperHeroes.Find(id).Catchphrase = hero.Catchphrase;
+                db.SuperHeroes.Find(hero.Id).Name = hero.Name;
+                db.SuperHeroes.Find(hero.Id).AlterEgo = hero.AlterEgo;
+                db.SuperHeroes.Find(hero.Id).PrimaryAbility = hero.PrimaryAbility;
+                db.SuperHeroes.Find(hero.Id).SecondaryAbility = hero.SecondaryAbility;
+                db.SuperHeroes.Find(hero.Id).Catchphrase = hero.Catchphrase;
                 db.SaveChanges();
                 return RedirectToAction("Heroes");
             }
